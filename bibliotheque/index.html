@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<title>Bibliothéque - Reboot Factory</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="initial-scale=1.0" />
+
+		<link rel="stylesheet" href="_styles/styles.css" />
+
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="http://snapsvg.io/assets/js/snap.svg-min.js"></script>
+	</head>
+	<body>
+
+		<div class="container">
+
+			<div id="flecheg">
+					
+				<svg version="1.1" id="menu-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+				 viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve">
+	    			<rect id="ligne_bas" x="10" y="42.2" width="40" height="3.6"/>
+	   			 	<rect id="ligne_millieu" x="10" y="28.2" width="40" height="3.6"/>
+	    			<rect id="ligne_haut" x="10" y="14.2" width="40" height="3.6"/>
+				</svg>
+
+
+			</div>
+
+			<div id="ajouter">
+					
+					<svg version="1.1" id="menu-icon-ajouter" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+				 viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve">
+	    		<rect id="ligne_bas" x="10" y="42.2" width="40" height="3.6"/>
+	   			 <rect id="ligne_millieu" x="10" y="28.2" width="40" height="3.6"/>
+	    		<rect id="ligne_haut" x="10" y="14.2" width="40" height="3.6"/>
+				</svg>
+
+
+			</div>
+
+			<div id="fleched">
+					
+					<svg version="1.1" id="menu-icon-fleched" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+				 viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve">
+	    		<rect id="ligne_bas" x="10" y="42.2" width="40" height="3.6"/>
+	   			 <rect id="ligne_millieu" x="10" y="28.2" width="40" height="3.6"/>
+	    		<rect id="ligne_haut" x="10" y="14.2" width="40" height="3.6"/>
+				</svg>
+
+
+			</div>
+
+			<div id="fermer">
+					
+					<svg version="1.1" id="menu-icon-fermer" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+				 viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve">
+	    		<rect id="ligne_bas" x="10" y="42.2" width="40" height="3.6"/>
+	   			 <rect id="ligne_millieu" x="10" y="28.2" width="40" height="3.6"/>
+	    		<rect id="ligne_haut" x="10" y="14.2" width="40" height="3.6"/>
+				</svg>
+
+
+			</div>
+
+		</div>
+
+		
+
+		<div class="container">
+
+			<div style="height: 300px; padding-top: 1.2rem">
+			<div class="window">
+				<input type="checkbox" id="click" class="toggle">
+ 			 	<label for="click">Chicago – Boston : un gros coup de Pau</label>
+  					<div> <p>Les Bulls ont bataillé ferme pour venir à bout des Celtics pourtant en back-to-back. Boston a cédé en prolongation 109-104 malgré un Evan Turner tonitruant (29 pts, 5 rbds, 6 pds, mais 7 bps). En face, c’est Pau Gasol qui a élevé son niveau jeu pour compenser les absences de Butler (raisons personnelles) et Dunleavy (cheville droite).</p> </div> 
+			</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class=choix>
+			<div id="button" class="bouton1">Basketball</div>
+			<div id="button2" class="bouton1 bouton2">Football</div>
+			</div>
+		</div>
+
+		<div class="container">
+
+			<div id="favoris">
+ 			 <button class="star"></button>
+  			<div id="eclat" class="debris"> </div>
+			</div>
+	
+		</div>
+
+		
+
+
+	<script>
+
+	/*fleche gauche*/
+		$(document).ready(function(){
+
+		var menu = Snap('#menu-icon'),
+        top = menu.select('#ligne_haut'),
+        middle = menu.select('#ligne_millieu'),
+        bottom = menu.select('#ligne_bas')
+    
+		function changeIcon(elState){
+        top.animate({
+            width: elState.width[0],
+            transform:elState.transform[0],
+            opacity:elState.opacity[0]
+        }, 500, mina.backin);
+        middle.animate({
+            width: elState.width[1],
+            transform:elState.transform[1],
+            opacity:elState.opacity[1]
+        }, 500, mina.backout);
+        bottom.animate({
+            width: elState.width[2],
+            transform:elState.transform[2],
+            opacity:elState.opacity[2]
+        }, 500, mina.backin);
+    }
+
+    $('#flecheg').click(function(){
+        changeIcon(iconAttr.flecheg);        
+    });
+
+
+    var iconAttr = {
+        flecheg:{
+            width: ["20","40","20"],
+            transform:["t-4,8.2 r-45","t0,-0, r0","t-4,-8.2, r45"],
+            opacity: [1,1,1]
+        }
+
+        }
+
+        });
+	/**/
+
+    /*ajouter*/
+        $(document).ready(function(){
+
+        var menu = Snap('#menu-icon-ajouter'),
+        top = menu.select('#ligne_haut'),
+        middle = menu.select('#ligne_millieu'),
+        bottom = menu.select('#ligne_bas')
+    
+		function changeIcon(elState){
+        top.animate({
+            width: elState.width[0],
+            transform:elState.transform[0],
+            opacity:elState.opacity[0]
+        }, 500, mina.backin);
+        middle.animate({
+            width: elState.width[1],
+            transform:elState.transform[1],
+            opacity:elState.opacity[1]
+        }, 500, mina.backout);
+        bottom.animate({
+            width: elState.width[2],
+            transform:elState.transform[2],
+            opacity:elState.opacity[2]
+        }, 500, mina.backin);
+    }
+
+    $('#ajouter').click(function(){
+        changeIcon(iconAttr.ajouter);        
+    });
+
+    var iconAttr = {
+		   ajouter: {
+            width: ["30","30","30"], 
+            transform: ["t5,14 r0","t5,0 r0", "t5,-14 r90"],
+            opacity: [0,1,1]
+        }
+
+    }
+
+        });
+	/**/
+
+
+	/*fleche droite*/
+	$(document).ready(function(){
+
+        var menu = Snap('#menu-icon-fleched'),
+        top = menu.select('#ligne_haut'),
+        middle = menu.select('#ligne_millieu'),
+        bottom = menu.select('#ligne_bas')
+
+        function changeIcon(elState){
+        top.animate({
+            width: elState.width[0],
+            transform:elState.transform[0],
+            opacity:elState.opacity[0]
+        }, 500, mina.backin);
+        middle.animate({
+            width: elState.width[1],
+            transform:elState.transform[1],
+            opacity:elState.opacity[1]
+        }, 500, mina.backout);
+        bottom.animate({
+            width: elState.width[2],
+            transform:elState.transform[2],
+            opacity:elState.opacity[2]
+        }, 500, mina.backin);
+    }
+
+
+    $('#fleched').click(function(){
+        changeIcon(iconAttr.fleched);        
+    });
+
+    var iconAttr = {
+        fleched:{
+            width: ["20","40","20"],
+            transform:["t24,8.2 r45","t0,-0, r0","t24,-8.2, r-45"],
+            opacity: [1,1,1]
+        }
+
+        }
+	});
+	/**/
+
+	/*fermer*/
+	$(document).ready(function(){
+
+        var menu = Snap('#menu-icon-fermer'),
+        top = menu.select('#ligne_haut'),
+        middle = menu.select('#ligne_millieu'),
+        bottom = menu.select('#ligne_bas')
+
+        function changeIcon(elState){
+        top.animate({
+            width: elState.width[0],
+            transform:elState.transform[0],
+            opacity:elState.opacity[0]
+        }, 500, mina.backin);
+        middle.animate({
+            width: elState.width[1],
+            transform:elState.transform[1],
+            opacity:elState.opacity[1]
+        }, 500, mina.backout);
+        bottom.animate({
+            width: elState.width[2],
+            transform:elState.transform[2],
+            opacity:elState.opacity[2]
+        }, 500, mina.backin);
+    }
+
+
+    $('#fermer').click(function(){
+        changeIcon(iconAttr.fermer);        
+    });
+
+    var iconAttr = {
+    	fermer: {
+            width: ["40","40","40"], 
+            transform: ["t0,14 r-45","t0,0 r0", "t0,-14 r45"],
+            opacity: [1,0,1] //[top,middle,bottom]
+        }
+    }
+     });
+    /**/
+
+	/*choix*/
+
+	var button = document.getElementById('button'),
+    	button2 = document.getElementById('button2');
+
+	button.addEventListener('click', function () {
+  	this.setAttribute('class', 'bouton1 active');
+  
+  	var self = this;
+  	setTimeout(function () {
+    	self.removeAttribute('class', 'active');
+    	self.setAttribute('class', 'bouton1');
+  	}, 300)
+	});
+
+	button2.addEventListener('click', function () {
+  	this.setAttribute('class', 'bouton1 bouton2 active');
+  
+  	var self = this;
+  	setTimeout(function () {
+    	self.removeAttribute('class', 'active');
+    	self.setAttribute('class', 'bouton1 bouton2');
+ 	 }, 300)
+	});
+	/**/
+
+
+
+	/*favoris*/
+	$( ".star" ).click(function() {
+ 	$( this ).toggleClass( "active" );
+	});
+
+	$( ".star" ).click(function() {
+  	$( ".debris" ).toggleClass( "trans" );
+	});
+
+	$(function(){
+ 
+  	$(".star").on("click", function(e) {
+    	pop(e.pageX, e.pageY, 12);
+  	});
+	});
+
+	function r2d(x) {
+    	return x / (Math.PI / 180);
+  	}
+
+  	function d2r(x) {
+    	return x * (Math.PI / 180);
+  	}
+
+  	function pop(start_x, start_y, particle_count) {
+    	arr = [];
+    	angle = 0;
+    	particles = [];
+    	offset_x = $("#eclat").width() / 2;
+    	offset_y = $("#eclat").height() / 2;
+
+    for (i = 0; i < particle_count; i++) {
+      	rad = d2r(angle);
+      	x = Math.cos(rad)*(80+Math.random()*20);
+      	y = Math.sin(rad)*(80+Math.random()*20);
+      	arr.push([start_x + x, start_y + y]);
+      	z = $('<div class="debris" />');
+      	z.css({
+          "left": start_x - offset_x,
+          "top": start_y - offset_x
+      	}).appendTo($("#content"));
+      	particles.push(z);
+      	angle += 360/particle_count;
+    	}
+    
+    $.each(particles, function(i, v){
+      $(v).show();
+      $(v).animate(
+        {
+          top: arr[i][1], 
+          left: arr[i][0],
+          width: 4, 
+          height: 4, 
+          opacity: 0
+        }, 600, function(){$(v).remove()
+      });
+    });
+  	}
+/**/
+
+	
+	</script>
+
+		
+		
+	
+		
+	</body>
+	
+</html>
+                                       
